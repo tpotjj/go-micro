@@ -23,7 +23,7 @@ spec:
             cpu: "500m"
         image: "joris97jansen/broker-service:1.0.1"
         ports:
-          - containerPort: 5672
+          - containerPort: 8080
 
 ---
 
