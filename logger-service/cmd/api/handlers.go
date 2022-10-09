@@ -36,8 +36,11 @@ func (app *Config) WriteLog(w http.ResponseWriter, r *http.Request) {
 
     log.Println("YEYEYE")
     log.Println(resp)
+     var response jsonResponse
+     response.Error = false
+     response.Message = "Logged"
 
-    app.writeJSON(w, http.StatusAccepted, resp)
+    app.writeJSON(w, http.StatusAccepted, response)
 }
 
 
