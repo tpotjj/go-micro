@@ -14,6 +14,8 @@ spec:
     spec:
       containers:
       - name: broker-service
+        image: "joris97jansen/broker-service:1.0.9"
+        imagePullPolicy: Always
         resources:
           requests:
             memory: "64Mi"
@@ -21,7 +23,6 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
-        image: "joris97jansen/broker-service:1.0.1"
         ports:
           - containerPort: 8080
 

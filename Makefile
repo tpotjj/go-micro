@@ -30,6 +30,12 @@ down:
 	docker-compose down                                                         
 	@echo "Done!"                                                               
                                                                                 
+## front_end_linux: builds linux executable for front end
+front_end_linux:
+	@echo "Building linux version of front end..."
+	cd ./front-end && env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o frontEndLinux ./cmd/web
+	@echo "Done!"
+
 ## build_broker: builds the broker binary as a linux executable                 
 build_broker:                                                                   
 	@echo "Building broker binary..."                                           

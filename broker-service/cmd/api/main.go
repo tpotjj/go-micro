@@ -51,8 +51,11 @@ func connect() (*amqp.Connection, error) {
     var connection *amqp.Connection
 
     // don't continue untill Rabbitmq is ready
+    log.Println("I AM NEW HERE AND I DO WORK")
+    log.Println(webPort)
+
     for {
-        c, err := amqp.Dial("amqp://guest:guest@rabbitmq:")
+        c, err := amqp.Dial("amqp://guest:guest@rabbitmq")
         if err != nil {
             fmt.Println("Rabbitmq not ready yet")
             counts++
@@ -68,7 +71,7 @@ func connect() (*amqp.Connection, error) {
         }
 
         backOff = time.Duration(math.Pow(float64(counts), 2)) * time.Second
-        log.Println("backing off")
+        log.Println("backing offfffff")
         time.Sleep(backOff)
         continue
     }

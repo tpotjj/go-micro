@@ -64,7 +64,8 @@
                 body: JSON.stringify(payload),
                 headers: headers,
             }
-            fetch("http:\/\/localhost:8000/handle", body)
+            /* fetch("http:\/\/localhost:8080/handle", body) */
+            fetch("http:\/\/broker-service.info/handle", body)
                 .then((response) => response.json())
                 .then((data) => {
                     sent.innerHTML = JSON.stringify(payload, undefined, 4);
@@ -98,7 +99,8 @@
                 headers: headers,
             }
 
-            fetch("http://localhost:8000/log-grpc", body)
+            /* fetch("http://localhost:8080/log-grpc", body) */
+            fetch("http:\/\/broker-service.info/log-grpc", body)
                 .then(response => response.json())
                 .then(data => {
                     sent.innerHTML = JSON.stringify(payload, undefined, 4);
@@ -133,7 +135,8 @@
                 headers: headers,
             }
 
-            fetch("http://localhost:8000/handle", body)
+            /* fetch("http://localhost:8080/handle", body) */
+            fetch("http:\/\/broker-service.info/handle", body)
                 .then(response => response.json())
                 .then(data => {
                     sent.innerHTML = JSON.stringify(payload, undefined, 4);
@@ -154,7 +157,8 @@
                     method: "POST",
                 }
 
-            fetch("http:\/\/localhost:8000", body)
+            /* fetch("http:\/\/localhost:8080", body) */
+            fetch("http:\/\/broker-service.info", body)
             .then((response) => response.json())
             .then((data) => {
                 sent.innerHTML = "empty post request";
@@ -187,7 +191,8 @@
                 body: JSON.stringify(payload),
                 headers: headers,
             }
-            fetch("http:\/\/localhost:8000/handle", body)
+            fetch("http:\/\/broker-service.info/handle", body)
+            /* fetch("http:\/\/localhost:8080/handle", body) */
                 .then((response) => response.json())
                 .then((data) => {
                     sent.innerHTML = JSON.stringify(payload, undefined, 4);
